@@ -39,6 +39,14 @@ li {
   padding: 20 0px;
 }
 
+.loading-elements {
+  width: 75%
+}
+
+.loading-elements li {
+  display: block;
+}
+
 @keyframes loadinganim {
   0% {
     transform: rotate(360deg);
@@ -168,18 +176,8 @@ li {
 
 /** Google loader --> https://codepen.io/jczimm/pen/vEBpoL by @jczimm **/
 
-.showbox {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 5%;
-}
-
 .loader {
   position: relative;
-  margin: 0 auto;
   width: 100px;
 }
 
@@ -320,4 +318,63 @@ li {
       background-color: #f5634a;
       width: 25px;
   }
+}
+
+/** Linkedin Content Placeholder @fahimshani https://codepen.io/fahimshani/pen/zZmGBa **/
+
+@keyframes pulse {
+  0%{opacity:.5}100%{opacity:1}
+}
+.post-feed {
+    margin-bottom: 12px;
+    padding: 16px 16px 42px;
+    border-radius: 4px;
+    width: 530px;
+    margin: 10px auto 20px;
+    background: #E1E9EE;
+}
+
+.width500 {
+    width: 500px;
+}
+
+.width470 {
+    width: 470px;
+}
+
+.width110 {
+    width: 110px;
+}
+
+.width250 {
+    width: 250px;
+}
+
+.line {
+    height: 10px;
+    margin: 10px 0;
+}
+
+.circle, .line,  .rect {
+    background: #fff;
+    -webkit-animation: pulse .65s infinite alternate;
+    animation: pulse .65s infinite alternate;
+}
+
+.circle {
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    width: 56px;
+    height: 56px;
+}
+
+.line-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.height20 {
+    height: 20px;
 }
