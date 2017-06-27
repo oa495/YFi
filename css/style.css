@@ -1,0 +1,323 @@
+
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Questrial', sans-serif;
+}
+
+h2, h3 {
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+#container {
+  display: flex;
+}
+
+.countries {
+  width: 25%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.countries ul {
+  padding: 0;
+}
+
+.countries li {
+  text-align: center;
+  border: 1px solid black;
+  padding: 20 0px;
+}
+
+@keyframes loadinganim {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/** Netflix **/
+/* Pen by Albert Augustin: https://codepen.io/alberta/pen/qZbpgv, @alberta */
+
+#wrapper {
+  background: #141414;
+  min-height: 300px;
+  color: white;
+  text-align: center;
+  display: table;
+  width: 100%;
+}
+
+#loading {
+  display: table-cell;
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  vertical-align: middle;
+  font-family: helvetica, sans-serif;
+}
+
+.bulletouter {
+  animation: loadinganim 1s infinite;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+  width: 50px;
+  height: 50px;
+  background: #E50914;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.bulletinner {
+  position: relative;
+  left: -5px;
+  width: 45px;
+  height: 45px;
+  background: #141414;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.mask {
+  position: relative;
+  left: -5px;
+  top: -15px;
+  width: 50px;
+  height: 25px;
+  background: #141414;
+  transform: rotate(45deg);
+}
+
+.dot {
+  position: relative;
+  left: 33px;
+  top: -32px;
+  width: 8px;
+  height: 8px;
+  background: #E50914;
+  border-radius: 50%;
+}
+
+
+/** -------------------- */
+/** Jose Manuel Perez, @jmperez **/
+.img-blur {
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(25px);
+}
+
+
+/** https://codepen.io/travishorn/pen/YyGVRG?js-preprocessor=none by Travis Horn **/
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px
+}
+
+.ball {
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  display: inline-block;
+  margin: 0 10px;
+  
+  animation: 2s bounce ease infinite;
+}
+
+.blue {
+  background-color: #4285F5;
+}
+
+.red {
+  background-color: #EA4436;
+  animation-delay: .25s;
+}
+
+.yellow {
+  background-color: #FBBD06;
+  animation-delay: .5s;
+}
+
+.green {
+  background-color: #34A952;
+  animation-delay: .75s;
+}
+
+@keyframes bounce {  
+    50% {
+        transform: translateY(25px);
+    }
+}
+
+/** Google loader --> https://codepen.io/jczimm/pen/vEBpoL by @jczimm **/
+
+.showbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5%;
+}
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.loader:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.circular {
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  height: 100%;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@-webkit-keyframes color {
+  100%,
+  0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #0057e7;
+  }
+  66% {
+    stroke: #008744;
+  }
+  80%,
+  90% {
+    stroke: #ffa700;
+  }
+}
+@keyframes color {
+  100%,
+  0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #0057e7;
+  }
+  66% {
+    stroke: #008744;
+  }
+  80%,
+  90% {
+    stroke: #ffa700;
+  }
+}
+
+/** Manoz, https://codepen.io/Manoz/pen/pydxK @Manoz **/
+
+.load-wrapp {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px 10px 0;
+    padding: 20px 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #d8d8d8;
+}
+
+.load-wrapp p {padding: 0 0 20px;}
+.load-wrapp:last-child {margin-right: 0;}
+
+.bar {
+    float: left;
+    width: 15px;
+    height: 6px;
+    border-radius: 2px;
+    background-color: #4b9cdb;
+}
+
+.load-10 .bar {animation: loadingJ 2s cubic-bezier(.17,.37,.43,.67) infinite;}
+
+@keyframes loadingJ {
+  0%,100% {transform: translate(0,0);}
+  
+  50% {
+      transform: translate(80px,0);
+      background-color: #f5634a;
+      width: 25px;
+  }
+}
