@@ -1,3 +1,4 @@
+var indexOfActiveElement = 0;
 var cWifiSpeeds = [
 	{ 
 		name: 'Paraguay',
@@ -152,7 +153,7 @@ var cWifiSpeeds = [
 ];
 
 function addCountriesList(){
-	$('.countries').append('<ul id='countriesList'></ul>');
+	$('.countries').append('<ul id="countriesList"></ul>');
 	const numberCountries = cWifiSpeeds.length;
 	for (i = 0; i < numberCountries; i++) {
 	  $('#countriesList').append('<li><button>' + cWifiSpeeds[i].name + '</button></li>');
@@ -162,9 +163,26 @@ function addCountriesList(){
 $(document).ready(function() {
 	addCountriesList();
 	var loadingElementsList = $('.loading-elements-list').children();
-	var indexOfActiveElement = 1;
-	$('countries').on( 'click', 'li', function( event ) {
-	    event.preventDefault();
+
+	$('.countries').on('click', 'li', function(event) {
 	    let country = $(this).text();
 	});
+
+	$('.arrow.left').on('click', function(event) {
+		if (indexOfActiveElement !== 0) {
+			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
+			indexOfActiveElement--;
+			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
+		}
+	});
+
+	$('.arrow.right').on('click', function(event) {
+		console.log('arrow right!');
+    if (indexOfActiveElement !== loadingElementsList.length-1 ) {
+    	loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
+			indexOfActiveElement++;
+			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
+		}
+	});
+
 });
