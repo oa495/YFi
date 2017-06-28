@@ -47,6 +47,10 @@ li {
   display: block;
 }
 
+.loading-elements-list li:not(.active) {
+  display: none;
+}
+
 @keyframes loadinganim {
   0% {
     transform: rotate(360deg);
