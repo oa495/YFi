@@ -1,4 +1,4 @@
-var wifiSpeeds = [
+var cWifiSpeeds = [
 	{ 
 		name: "Paraguay",
 		averageSpeed: 1.400,
@@ -125,7 +125,7 @@ var wifiSpeeds = [
 		peakSpeed: 86.5
 	},
 	{
-		name:"Japan",
+		name: "Japan",
 		averageSpeed:	20.200,
 		peakSpeed:94.5
 	},
@@ -149,4 +149,21 @@ var wifiSpeeds = [
 		averageSpeed: 28.600,
 		peakSpeed: 121
 	}
-]
+];
+
+function addCountriesList(){
+	$('.countries').append("<ul id='countriesList'></ul>");
+	const numberCountries = cWifiSpeeds.length;
+	for (i = 0; i < numberCountries; i++) {
+	  $("#countriesList").append("<li><button>" + cWifiSpeeds[i].name + "</button></li>");
+	}
+}
+
+$(document).ready(function() {
+	addCountriesList();
+	$( ".countries" ).on( "click", "li", function( event ) {
+	    event.preventDefault();
+	    let country = $( this ).text();
+	    // what animation is being displayed?
+	});
+});
