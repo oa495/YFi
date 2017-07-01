@@ -108,11 +108,11 @@ $(document).ready(function() {
 			peakSpeed:94.5
 		},
 		'Singapore': {
-			averageSpeed:20.300,
+			averageSpeed: 20.300,
 			peakSpeed:	184.5
 		},
 		'Hong Kong': {
-			averageSpeed: '21.900',
+			averageSpeed: 21.900,
 			peakSpeed: 129.5
 		},
 		'Norway': {
