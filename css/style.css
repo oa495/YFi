@@ -28,6 +28,10 @@ button {
   background: none;
 }
 
+.active-button {
+  background: red;
+}
+
 #container {
   display: flex;
 }
@@ -57,10 +61,6 @@ button {
   width: 85%;
   height: 80%;
   margin: 2%;
-}
-
-.loading-elements-list {
-  height: 90%
 }
 
 .loading-elements li {

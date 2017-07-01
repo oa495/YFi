@@ -1,7 +1,10 @@
+var indexOfActiveElement = 0;
+var activeElement = 'opening';
+var country;
+var timerOn = false;
+
 $(document).ready(function() {
 	// What animation should be displayed on the screen
-	var indexOfActiveElement = 0;
-	var activeElement = 'opening';
 	var cWifiSpeeds = {
 		'Paraguay': { 
 			averageSpeed: 1.400,
@@ -136,9 +139,6 @@ $(document).ready(function() {
 		'Twitter': 36000000
 	};
 
-	var country;
-	var timerOn = false;
-
 	addCountriesList(cWifiSpeeds);
 	calculateDownloadTimes(cWifiSpeeds, sizeToLoad);
 
@@ -147,6 +147,7 @@ $(document).ready(function() {
 
 	$('.countries').on('click', 'li', function(event) {
 		// set country
+		$(this).addClass('active-button');
 		let clickedCountry = $(this).text();
 		if (clickedCountry !== country) {
 			country = $(this).text();
@@ -159,6 +160,9 @@ $(document).ready(function() {
 			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 			indexOfActiveElement--;
 			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
+			if (country) {
+				play(sizeToLoad, cWifiSpeeds, loadingElementsList);
+			}
 		}
 	});
 
@@ -166,11 +170,12 @@ $(document).ready(function() {
 		console.log('arrow right!');
     if (indexOfActiveElement !== loadingElementsList.length-1 ) {
     	// reset everything
-    	play(sizeToLoad, cWifiSpeeds, loadingElementsList);
-
     	loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 			indexOfActiveElement++;
 			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
+			if (country) {
+				play(sizeToLoad, cWifiSpeeds, loadingElementsList);
+			}
 		}
 	});
 });
@@ -188,14 +193,17 @@ function startTimer(s) {
 
 function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
 	for (var element in sizeToLoad) {
-		if ((indexOfActiveElement !== 0) && (indexOfActiveElement !== loadingElementsList.length))
-		if (loadingElementsList.eq(indexOfActiveElement).contains(element)) {
-			console.log('this is the current animation:' + element);
-			// get country download time for that service, i.e get how long it'll take to download a netflix episode
-			let downloadTime = wifiSpeeds[country]; // in seconds
-			// set timer on to true
-			timerOn = true;
-			startTimer(downloadTime);
+		if ((indexOfActiveElement !== 0) && (indexOfActiveElement !== loadingElementsList.length)) {
+			// Get text in element
+			let text = loadingElementsList.eq(indexOfActiveElement).text();
+			if (text.includes(element)) {
+				console.log('this is the current animation:' + element);
+				// get country download time for that service, i.e get how long it'll take to download a netflix episode
+				let downloadTime = wifiSpeeds[country][element]; // in seconds
+				// set timer on to true
+				timerOn = true;
+				startTimer(downloadTime);
+			}
 		}
 	}
 }
