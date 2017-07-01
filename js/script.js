@@ -1,177 +1,157 @@
 $(document).ready(function() {
+	// What animation should be displayed on the screen
 	var indexOfActiveElement = 0;
-	var cWifiSpeeds = [
-		{ 
-			name: 'Paraguay',
+	var activeElement = 'opening';
+	var cWifiSpeeds = {
+		'Paraguay': { 
 			averageSpeed: 1.400,
 			peakSpeed: 10.1,
 		},
-		{
-			name: 'Egypt',
+		'Egypt': {
 			averageSpeed: 2.000,
 			peakSpeed: 17
 		},
-		{
-			name: 'Namibia',
+		'Namibia': {
 			averageSpeed: 2.900,
 			peakSpeed: 24.3
 		},
-		{
-			name: 'Nigeria',
+		'Nigeria': {
 			averageSpeed:	3.900,
 			peakSpeed: 29.1
 		},
-		{
-			name:	'Iran',
+		'Iran': {
 			averageSpeed: 4.700,
 			peakSpeed: 25.2
 		},
-		{
-			name: 'Morocco',
+		'Morocco': {
 			averageSpeed: 5.200,
 			peakSpeed: 25.9
 		},
-		{
-			name:	'Peru',
+		'Peru': {
 			averageSpeed:	6.200,
 			peakSpeed: 47.5
 		},
-		{
-			name:	'Argentina',
+		'Argentina': {
 			averageSpeed: 6.300,
 			peakSpeed:	40.3
 		},
-		{
-			name: 'India',
+		'India': {
 			averageSpeed:	6.500,
 			peakSpeed: 41.4
 		},
-		{
-			name: 'South Africa',
+		'South Africa': {
 			averageSpeed: 6.700,
 			peakSpeed: 32.4
 		},
-		{
-			name: 'Saudi Arabia',
+		'Saudi Arabia': {
 			averageSpeed: 6.700,
 			peakSpeed: 52.3
 		},
-		{
-			name: 'Mexico',
+		'Mexico': {
 			averageSpeed: 7.500,
 			peakSpeed: 45.2
 		},
-		{
-			name: 'China',
+		'China': {
 			averageSpeed: 7.600,
 			peakSpeed: 45.9
 		},
-		{
-			name: 'Greece',
+		'Greece': {
 			averageSpeed: 7.900,
 			peakSpeed: 39.7
 		},
-		{
-				name:	'UAE',
+		'UAE': {
 				averageSpeed: 8.600,
 				peakSpeed: 81.1
 		},
-		{
-			name:	'Chile',
+		'Chile': {
 			averageSpeed:	9.300,
 			peakSpeed:	65.5
 		},
-		{
-			name: 'France',
+		'France': {
 			averageSpeed:	10.800,
 			peakSpeed: 49.7
 		},
-		{
-			name:	'Australia',
+		'Australia': {
 			averageSpeed: 11.100,
 			peakSpeed: 55.7
 		},
-		{
-			name: 'Russia',
+		'Russia': {
 			averageSpeed:	11.800,
 			peakSpeed: 69.3
 		},
-		{
-			name: 'Kenya',
+		'Kenya': {
 			averageSpeed: 2.200,
 			peakSpeed: 38.5
 		},
-		{
-			name:	'Israel',
+		'Israel': {
 			averageSpeed: 13.700,
 			peakSpeed: 99.1
 		},
-		{
-			name:	'Thailand',
+		'Thailand': {
 			averageSpeed:	16.000,
 			peakSpeed:	106.6
 		},
-		{
-			name: 'United Kingdom',
+		'United Kingdom': {
 			averageSpeed: 16.900,
 			peakSpeed: 76.1
 		},
-		{
-			name:	'Taiwan',
+		'Taiwan': {
 			averageSpeed: 16.900,
 			peakSpeed: 94.7
 		},
-		{
-			name:'United States',
+		'United States': {
 			averageSpeed: 18.700,
 			peakSpeed: 86.5
 		},
-		{
-			name: 'Japan',
+		'Japan': {
 			averageSpeed:	20.200,
 			peakSpeed:94.5
 		},
-		{
-			name:	'Singapore',
+		'Singapore': {
 			averageSpeed:20.300,
 			peakSpeed:	184.5
 		},
-		{
-			name: 'Hong Kong',
+		'Hong Kong': {
 			averageSpeed: '21.900',
 			peakSpeed: 129.5
 		},
-		{
-			name: 'Norway',
+		'Norway': {
 			averageSpeed: 23.500,
 			peakSpeed: 85.9,
 		},
-		{
-			name:	'South Korea',
+		'South Korea': {
 			averageSpeed: 28.600,
 			peakSpeed: 121
 		}
-	];
-
-	// in bits
-	var sizeToLoad = {
-			'netflix': 16000000,
-			'medium-image': 3608000,
-			'gmail': 1200000000,
-			'linkedin': 16000000,
-			'instagram': 1200000,
-			'giphy': 65600000,
-			'twitter': 36000000
 	};
 
+	// approx. size in bits
+	var sizeToLoad = {
+		'Netflix': 16000000,
+		'Medium': 8800000,
+		'Gmail': 1200000000,
+		'LinkedIn': 16000000,
+		'Instagram': 1200000,
+		'Giphy': 65600000,
+		'Twitter': 36000000
+	};
+
+	var country;
+	var timerOn = false;
 
 	addCountriesList(cWifiSpeeds);
 	calculateDownloadTimes(cWifiSpeeds, sizeToLoad);
 
-	var loadingElementsList = $('.loading-elements-list').children();
+	const loadingElementsList = $('.loading-elements-list').children();
+	// If user chooses a country
 
 	$('.countries').on('click', 'li', function(event) {
-	    let country = $(this).text();
+		// set country
+		let clickedCountry = $(this).text();
+		if (clickedCountry !== country) {
+			country = $(this).text();
+			play(sizeToLoad, cWifiSpeeds, loadingElementsList);
+		}
 	});
 
 	$('.arrow.left').on('click', function(event) {
@@ -185,6 +165,9 @@ $(document).ready(function() {
 	$('.arrow.right').on('click', function(event) {
 		console.log('arrow right!');
     if (indexOfActiveElement !== loadingElementsList.length-1 ) {
+    	// reset everything
+    	play(sizeToLoad, cWifiSpeeds, loadingElementsList);
+
     	loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 			indexOfActiveElement++;
 			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
@@ -192,24 +175,48 @@ $(document).ready(function() {
 	});
 });
 
+function startTimer(s) {
+	console.log(s);
+
+	showTimer();
+	// when timer is over change to .loaded screen
+}
+
+function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
+	for (var element in sizeToLoad) {
+		if ((indexOfActiveElement !== 0) && (indexOfActiveElement !== loadingElementsList.length))
+		if (loadingElementsList.eq(indexOfActiveElement).contains(element)) {
+			console.log('this is the current animation:' + element);
+			// get country download time for that service, i.e get how long it'll take to download a netflix episode
+			let downloadTime = wifiSpeeds[country]; // in seconds
+			// set timer on to true
+			timerOn = true;
+			startTimer(downloadTime);
+		}
+	}
+}
+
 function addCountriesList(wifiSpeeds){
 	$('.countries').append('<ul id="countriesList"></ul>');
-	let numberCountries = wifiSpeeds.length;
-	for (i = 0; i < numberCountries; i++) {
-	  $('#countriesList').append('<li><button>' + wifiSpeeds[i].name + '</button></li>');
+	for (var country in wifiSpeeds) {
+	  $('#countriesList').append('<li><button>' + country + '</button></li>');
 	}
 }
 
 function calculateDownloadTimes(wifiSpeeds, sizeToLoad) {
 	let numberCountries = wifiSpeeds.length;
-	for (i = 0; i < numberCountries; i++) {
+	for (var country in wifiSpeeds) {
 		// convert to bits per second
-	  let speed = (wifiSpeeds[i].averageSpeed * 1000) * 1000;
+		console.log(country);
+		console.log(wifiSpeeds[country].averageSpeed);
+	  let speed = (wifiSpeeds[country].averageSpeed * 1000) * 1000;
 	  for (var element in sizeToLoad) {
 	  	 if (sizeToLoad.hasOwnProperty(element)) {
-	  	 	console.log(sizeToLoad[element]);
-		    wifiSpeeds[i][element] = sizeToLoad[element] / speed;
-		    //console.log( wifiSpeeds[i][element]);
+	  	 	console.log(sizeToLoad[element], speed);
+	  	 	console.log(sizeToLoad[element] / speed);
+		    wifiSpeeds[country][element] = sizeToLoad[element] / speed;
+		    console.log(country);
+		    console.log(element + ' ' + wifiSpeeds[country][element] + ' seconds');
 		  }
 	  }
 	}
