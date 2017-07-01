@@ -131,7 +131,7 @@ $(document).ready(function() {
 		'Medium': 8800000,
 		'Gmail': 1200000000,
 		'LinkedIn': 16000000,
-		'Instagram': 1200000,
+		'Instagram': 4800000,
 		'Giphy': 65600000,
 		'Twitter': 36000000
 	};
@@ -175,11 +175,15 @@ $(document).ready(function() {
 	});
 });
 
+function showLoadedContent() {
+
+}
+
 function startTimer(s) {
 	console.log(s);
-
-	showTimer();
-	// when timer is over change to .loaded screen
+	let timer = $('.timer');
+	var numAnim = new CountUp(timer, 0, s);
+	numAnim.start(showLoadedContent);
 }
 
 function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
