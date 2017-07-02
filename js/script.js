@@ -147,10 +147,11 @@ $(document).ready(function() {
 
 	$('.countries').on('click', 'li', function(event) {
 		// set country
-		$(this).addClass('active-button');
 		let clickedCountry = $(this).text();
 		if (clickedCountry !== country) {
 			country = $(this).text();
+			$('#countriesList > li').removeClass('active-button');
+			$(this).addClass('active-button');
 			play(sizeToLoad, cWifiSpeeds, loadingElementsList);
 		}
 	});
@@ -186,8 +187,9 @@ function showLoadedContent() {
 
 function startTimer(s) {
 	console.log(s);
-	let timer = $('.timer');
-	var numAnim = new CountUp(timer, 0, s);
+	//let timer = $('.timer');
+	var numAnim = new CountUp('timer', 0, s);
+	console.log(numAnim);
 	numAnim.start(showLoadedContent);
 }
 
