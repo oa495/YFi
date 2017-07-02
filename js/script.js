@@ -2,6 +2,7 @@ var indexOfActiveElement = 0;
 var activeElement = 'opening';
 var country;
 var timerOn = false;
+var numAnim;
 
 $(document).ready(function() {
 	// What animation should be displayed on the screen
@@ -152,6 +153,7 @@ $(document).ready(function() {
 			country = $(this).text();
 			$('#countriesList > li').removeClass('active-button');
 			$(this).addClass('active-button');
+			reset();
 			play(sizeToLoad, cWifiSpeeds, loadingElementsList);
 		}
 	});
@@ -162,6 +164,7 @@ $(document).ready(function() {
 			indexOfActiveElement--;
 			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 			if (country) {
+				reset();
 				play(sizeToLoad, cWifiSpeeds, loadingElementsList);
 			}
 		}
@@ -170,26 +173,42 @@ $(document).ready(function() {
 	$('.arrow.right').on('click', function(event) {
 		console.log('arrow right!');
     if (indexOfActiveElement !== loadingElementsList.length-1 ) {
-    	// reset everything
     	loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 			indexOfActiveElement++;
 			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 			if (country) {
+				reset();
 				play(sizeToLoad, cWifiSpeeds, loadingElementsList);
 			}
 		}
 	});
+
+	$('.reset').on('click', function(event) {
+			reset();
+		}
+	});
 });
 
-function showLoadedContent() {
+function reset() {
+	// reset timer (start over)
+	// show unloaded content
+	if (timerOn) {
+		numAnim.reset();
+		showUnloadedContent();
+	}
+}
 
+function showunLoadedContent() {
+	
+}
+
+function showLoadedContent() {
+	timerOn = false;
 }
 
 function startTimer(s) {
-	console.log(s);
-	//let timer = $('.timer');
-	var numAnim = new CountUp('timer', 0, s);
-	console.log(numAnim);
+	timerOn = true;
+	numAnim = new CountUp('timer', 0, s);
 	numAnim.start(showLoadedContent);
 }
 
@@ -221,16 +240,10 @@ function calculateDownloadTimes(wifiSpeeds, sizeToLoad) {
 	let numberCountries = wifiSpeeds.length;
 	for (var country in wifiSpeeds) {
 		// convert to bits per second
-		console.log(country);
-		console.log(wifiSpeeds[country].averageSpeed);
 	  let speed = (wifiSpeeds[country].averageSpeed * 1000) * 1000;
 	  for (var element in sizeToLoad) {
 	  	 if (sizeToLoad.hasOwnProperty(element)) {
-	  	 	console.log(sizeToLoad[element], speed);
-	  	 	console.log(sizeToLoad[element] / speed);
 		    wifiSpeeds[country][element] = sizeToLoad[element] / speed;
-		    console.log(country);
-		    console.log(element + ' ' + wifiSpeeds[country][element] + ' seconds');
 		  }
 	  }
 	}

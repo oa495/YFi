@@ -95,6 +95,10 @@ button {
   position: relative;
 }
 
+.reset {
+  width: 35px;
+}
+
 .intro {
   display: flex;
   align-items: center;
