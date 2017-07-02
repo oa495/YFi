@@ -185,7 +185,6 @@ $(document).ready(function() {
 
 	$('.reset').on('click', function(event) {
 			reset();
-		}
 	});
 });
 
@@ -199,7 +198,7 @@ function reset() {
 }
 
 function showunLoadedContent() {
-	
+
 }
 
 function showLoadedContent() {
