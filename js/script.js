@@ -193,21 +193,21 @@ function reset() {
 	// show unloaded content
 	if (timerOn) {
 		numAnim.reset();
-		showUnloadedContent();
 	}
 }
 
-function showunLoadedContent() {
+function showUnLoadedContent() {
 
 }
 
 function showLoadedContent() {
+	reset();
 	timerOn = false;
 }
 
 function startTimer(s) {
 	timerOn = true;
-	numAnim = new CountUp('timer', 0, s);
+	numAnim = new CountUp('timer', 0, s, 15);
 	numAnim.start(showLoadedContent);
 }
 
@@ -243,6 +243,7 @@ function calculateDownloadTimes(wifiSpeeds, sizeToLoad) {
 	  for (var element in sizeToLoad) {
 	  	 if (sizeToLoad.hasOwnProperty(element)) {
 		    wifiSpeeds[country][element] = sizeToLoad[element] / speed;
+		    console.log(sizeToLoad[element] / speed);
 		  }
 	  }
 	}
