@@ -143,6 +143,7 @@ $(document).ready(function() {
 	addCountriesList(cWifiSpeeds);
 	loadingElementsList = $('.loading-elements-list').children();
 	calculateDownloadTimes(cWifiSpeeds, sizeToLoad);
+	$('.loaded').addClass('hide');
 
 	// If user chooses a country
 
@@ -150,6 +151,7 @@ $(document).ready(function() {
 		// set country
 		let clickedCountry = $(this).text();
 		if (clickedCountry !== country) {
+			showLoadedContent();
 			country = $(this).text();
 			$('#countriesList > li').removeClass('active-button');
 			$(this).addClass('active-button');
@@ -163,6 +165,7 @@ $(document).ready(function() {
 		}
 		else indexOfActiveElement = loadingElementsList.length-1;
 		loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
+		showLoadedContent();
 	});
 
 	$('.arrow.right').on('click', function(event) {
@@ -173,10 +176,11 @@ $(document).ready(function() {
 		}
 		else indexOfActiveElement = 0;
 		loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
+		showLoadedContent();
 	});
 
 	$('.reset').on('click', function(event) {
-			reset();
+			showLoadedContent();
 	});
 
 	$('.play').on('click', function(event) {
@@ -188,31 +192,33 @@ function reset() {
 	// reset timer (start over)
 	// show unloaded content
 	if (timerOn) {
+		timerOn = false;
+		console.log('in here');
 		numAnim.reset();
 	}
 }
 
 function showUnLoadedContent() {
-	//let element = loadingElementsList.eq(indexOfActiveElement);
-	//console.log(element);
-}
-
-function showLoadedContent() {
-	timerOn = false;
 	reset();
 	let parent = loadingElementsList.eq(indexOfActiveElement);
 	let loading = parent.children('.loading');
 	let loaded = parent.children('.loaded');
-	loading.removeClass('loading');
-	loading.addClass('loaded');
-	loaded.removeClass('loaded');
-	loaded.addClass('loading');
+	loading.addClass('hide');
+	loaded.removeClass('hide');
+}
+
+function showLoadedContent() {
+	reset();
+	let loading = $('.loading');
+	let loaded = $('.loaded');
+	loading.removeClass('hide');
+	loaded.addClass('hide');
 }
 
 function startTimer(s) {
 	timerOn = true;
 	numAnim = new CountUp('timer', 0, s, 15);
-	numAnim.start(showLoadedContent);
+	numAnim.start(showUnLoadedContent);
 }
 
 function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
@@ -223,7 +229,6 @@ function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
 				let text = loadingElementsList.eq(indexOfActiveElement).text();
 				if (text.includes(element)) {
 					console.log('this is the current animation:' + element);
-					reset();
 					// get country download time for that service, i.e get how long it'll take to download a netflix episode
 					let downloadTime = wifiSpeeds[country][element]; // in seconds
 					// set timer on to true
