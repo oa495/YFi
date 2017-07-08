@@ -1,7 +1,7 @@
+var loadingElementsList;
 var indexOfActiveElement = 0;
-var activeElement = 'opening';
-var country;
 var timerOn = false;
+var country;
 var numAnim;
 
 $(document).ready(function() {
@@ -141,9 +141,9 @@ $(document).ready(function() {
 	};
 
 	addCountriesList(cWifiSpeeds);
+	loadingElementsList = $('.loading-elements-list').children();
 	calculateDownloadTimes(cWifiSpeeds, sizeToLoad);
 
-	const loadingElementsList = $('.loading-elements-list').children();
 	// If user chooses a country
 
 	$('.countries').on('click', 'li', function(event) {
@@ -153,38 +153,34 @@ $(document).ready(function() {
 			country = $(this).text();
 			$('#countriesList > li').removeClass('active-button');
 			$(this).addClass('active-button');
-			reset();
-			play(sizeToLoad, cWifiSpeeds, loadingElementsList);
 		}
 	});
 
 	$('.arrow.left').on('click', function(event) {
+		loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 		if (indexOfActiveElement !== 0) {
-			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 			indexOfActiveElement--;
-			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
-			if (country) {
-				reset();
-				play(sizeToLoad, cWifiSpeeds, loadingElementsList);
-			}
 		}
+		else indexOfActiveElement = loadingElementsList.length-1;
+		loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 	});
 
 	$('.arrow.right').on('click', function(event) {
 		console.log('arrow right!');
+		loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
     if (indexOfActiveElement !== loadingElementsList.length-1 ) {
-    	loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 			indexOfActiveElement++;
-			loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
-			if (country) {
-				reset();
-				play(sizeToLoad, cWifiSpeeds, loadingElementsList);
-			}
 		}
+		else indexOfActiveElement = 0;
+		loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
 	});
 
 	$('.reset').on('click', function(event) {
 			reset();
+	});
+
+	$('.play').on('click', function(event) {
+		play(sizeToLoad, cWifiSpeeds, loadingElementsList);
 	});
 });
 
@@ -197,12 +193,20 @@ function reset() {
 }
 
 function showUnLoadedContent() {
-
+	//let element = loadingElementsList.eq(indexOfActiveElement);
+	//console.log(element);
 }
 
 function showLoadedContent() {
-	reset();
 	timerOn = false;
+	reset();
+	let parent = loadingElementsList.eq(indexOfActiveElement);
+	let loading = parent.children('.loading');
+	let loaded = parent.children('.loaded');
+	loading.removeClass('loading');
+	loading.addClass('loaded');
+	loaded.removeClass('loaded');
+	loaded.addClass('loading');
 }
 
 function startTimer(s) {
@@ -212,17 +216,20 @@ function startTimer(s) {
 }
 
 function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
-	for (var element in sizeToLoad) {
-		if ((indexOfActiveElement !== 0) && (indexOfActiveElement !== loadingElementsList.length)) {
-			// Get text in element
-			let text = loadingElementsList.eq(indexOfActiveElement).text();
-			if (text.includes(element)) {
-				console.log('this is the current animation:' + element);
-				// get country download time for that service, i.e get how long it'll take to download a netflix episode
-				let downloadTime = wifiSpeeds[country][element]; // in seconds
-				// set timer on to true
-				timerOn = true;
-				startTimer(downloadTime);
+	if (country) {
+		for (var element in sizeToLoad) {
+			if ((indexOfActiveElement !== 0) && (indexOfActiveElement !== loadingElementsList.length)) {
+				// Get text in element
+				let text = loadingElementsList.eq(indexOfActiveElement).text();
+				if (text.includes(element)) {
+					console.log('this is the current animation:' + element);
+					reset();
+					// get country download time for that service, i.e get how long it'll take to download a netflix episode
+					let downloadTime = wifiSpeeds[country][element]; // in seconds
+					// set timer on to true
+					timerOn = true;
+					startTimer(downloadTime);
+				}
 			}
 		}
 	}
@@ -231,7 +238,7 @@ function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
 function addCountriesList(wifiSpeeds){
 	$('.countries').append('<ul id="countriesList"></ul>');
 	for (var country in wifiSpeeds) {
-	  $('#countriesList').append('<li><button>' + country + '</button></li>');
+		$('#countriesList').append('<li><button>' + country + '</button></li>');
 	}
 }
 

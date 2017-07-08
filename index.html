@@ -21,6 +21,7 @@
 				<li class="active">
 					<div class="intro">
 						<img src="images/twitter-convo.png"/>
+						<h3>What is this? </h3>
 						<p> This website was inspired by this conversation I had on twitter. I was home (Nigeria) for a bit before I started work and was annoyed at how long I had to look at loading animations. I wondered how long people wanted to wait around the world screaming whyyyyyyfiiii.</p>
 					</div>
 				</li>
@@ -128,14 +129,19 @@
 					<div class="loaded"></div>
 				</li>
 				<li>
-					<h3> How this works </h3>
-					<h4> Where is all this data from? </h4>
-					<p> Data about wifi speeds is from: </p>
-					<p></p>
+					<h3> Notes / How this works </h3>
+					<ul>
+						<li> Data about wifi speeds is from: <a href="https://www.akamai.com/us/en/about/our-thinking/state-of-the-internet-report/">Akamai's State of the Internet / Connectivity Report</a></li>
+						<li>I chose countries based on what suprised me and to get diversity across speeds.</li>
+						<li>To get most data about loading times, I used a combination of Firefox DevTools and the Network Panel on Chrome DevTools. For Gmail I used this article on <a href="https://www.lifewire.com/how-to-check-your-gmail-storage-quota-3572140">Gmail's Storage Quota</a></li>
+						<li>The wifi speeds and sizes of resources are hard-coded in so you can see them and the rest of the code at <a href="https://github.com/oa495/whyfi">the repo.</a></li>
+						<li>Any other questions / thoughts? Hit me up on <a href="https://twitter.com/YellzHeard">twitter!</a></li>
+					</ul>
 				</li>
 			</ul>
 			<span id="timer"></span>
 			<button class="reset"><img src="images/reset.svg"/></button>
+			<button class="play"><img src="images/play.svg"/></button>
 		</div>
 	</div>
 </body>
