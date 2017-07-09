@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>Y-Fi</title>
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400|Questrial" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dosis|Montserrat:400,600,700|Questrial" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/countUp.js"></script>
@@ -12,17 +12,26 @@
 	<h1>Y-Fi</h1>
 	<div id="container">
 		<div class="countries">
-			<h2> Countries / Regions </h2>
+			<h2> Countries</h2>
 		</div>
 		<div class="loading-elements">
 			<button class="arrow left"><img src="images/left-arrow.svg" /></button>
-			<button class="arrow right"><img src="images/right-arrow.svg" /></button>
 			<ul class="loading-elements-list">
 				<li class="active">
 					<div class="intro">
-						<img src="images/twitter-convo.png"/>
 						<h3>What is this? </h3>
-						<p> This website was inspired by this conversation I had on twitter. I was home (Nigeria) for a bit before I started work and was annoyed at how long I had to look at loading animations. I wondered how long people wanted to wait around the world screaming whyyyyyyfiiii.</p>
+						<div class="text">
+							<p> This website was inspired by this conversation I had on twitter. I was home (Nigeria) for a bit before I started work and was annoyed at how long I had to look at loading animations. I wondered how long people wanted to wait around the world screaming.</p>
+							<h4> Notes / How this works </h4>
+							<ul class="notes">
+								<li> Data about wifi speeds is from: <a href="https://www.akamai.com/us/en/about/our-thinking/state-of-the-internet-report/">Akamai's State of the Internet / Connectivity Report.</a></li>
+								<li>I chose countries based on what suprised me and to get diversity across speeds.</li>
+								<li>To get most data about loading times, I used a combination of Firefox DevTools and the Network Panel on Chrome DevTools. For Gmail I used this article on <a href="https://www.lifewire.com/how-to-check-your-gmail-storage-quota-3572140">Gmail's Storage Quota.</a></li>
+								<li>The wifi speeds and sizes of resources are hard-coded in so you can see them and the rest of the code at <a href="https://github.com/oa495/whyfi">the repo.</a></li>
+								<li>Any other questions / thoughts? Hit me up on <a href="https://twitter.com/YellzHeard">twitter!</a></li>
+							</ul>
+						</div>
+						<img src="images/twitter-convo.png"/>
 					</div>
 				</li>
 				<li>
@@ -39,7 +48,7 @@
 						</div>
 						<span>This was made by: </span>
 					</div>
-					<div class="loaded"><img src="images/black-mirror-1.jpg"/></div>
+					<div class="loaded"><img src=""/></div>
 				</li>
 				<li>
 					<h3> Medium's Blur Effect on Images </h3>
@@ -128,20 +137,13 @@
 					</div>
 					<div class="loaded"></div>
 				</li>
-				<li>
-					<h3> Notes / How this works </h3>
-					<ul>
-						<li> Data about wifi speeds is from: <a href="https://www.akamai.com/us/en/about/our-thinking/state-of-the-internet-report/">Akamai's State of the Internet / Connectivity Report</a></li>
-						<li>I chose countries based on what suprised me and to get diversity across speeds.</li>
-						<li>To get most data about loading times, I used a combination of Firefox DevTools and the Network Panel on Chrome DevTools. For Gmail I used this article on <a href="https://www.lifewire.com/how-to-check-your-gmail-storage-quota-3572140">Gmail's Storage Quota.</a></li>
-						<li>The wifi speeds and sizes of resources are hard-coded in so you can see them and the rest of the code at <a href="https://github.com/oa495/whyfi">the repo.</a></li>
-						<li>Any other questions / thoughts? Hit me up on <a href="https://twitter.com/YellzHeard">twitter!</a></li>
-					</ul>
-				</li>
 			</ul>
-			<span id="timer"></span>
-			<button class="reset"><img src="images/reset.svg"/></button>
-			<button class="play"><img src="images/play.svg"/></button>
+			<div class="controls">
+				<span id="timer"></span>
+				<button class="reset"><img src="images/reset.svg"/></button>
+				<button class="play"><img src="images/play.svg"/></button>
+			</div>
+			<button class="arrow right"><img src="images/right-arrow.svg" /></button>
 		</div>
 	</div>
 </body>

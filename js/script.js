@@ -217,7 +217,7 @@ function showLoadedContent() {
 
 function startTimer(s) {
 	timerOn = true;
-	numAnim = new CountUp('timer', 0, s, 15);
+	numAnim = new CountUp('timer', 0, s, 5);
 	numAnim.start(showUnLoadedContent);
 }
 

@@ -1,23 +1,37 @@
 /** General CSS **/
-/* #EFF1F5  #DFE2F1 #F6BE71 #9CA4D8 #DFE2F1 **/
+/* E1EBF9 and #FBD6E8 */
+ /*#CFE9FA  #F4DCE9*/
+ /*#bbe5f0 FFDFE2 A0C5FF
+ FCC9C9 #bbe5f0 
+ #D5E9EF 6DC4DC*/
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Questrial', sans-serif;
   font-weight: 300;
   margin: 0;
+  border: 20px solid #E1EBF9;
+  max-height: 95vh;
 }
 
 h1 {
-  font-family: 'Questrial', sans-serif;
-  padding: 20px;
+  font-family: 'Dosis', sans-serif;
+  padding: 0 20px;
   margin: 0;
-  background: #b0b7d6;
-  border-left: 15px solid #e6e5e5;
+  color: black;
+  font-size: 40px;
+}
+
+h2, h3, h4 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+h2 {
+  padding: 0 20px;
 }
 
 h2, h3 {
-  font-weight: 400;
-  padding: 0 20px;
+  font-size: 22px;
 }
 
 li {
@@ -30,6 +44,12 @@ button {
   background: none;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid #FBD6E8;
+}
+
 .active-button {
   background: red;
 }
@@ -39,10 +59,9 @@ button {
 }
 
 .countries {
-  width: 25%;
-  height: 100%;
+  width: 15%;
+  max-height: 90%;
   overflow-y: scroll;
-  border-left: 15px solid #ccceda;
 }
 
 .countries ul {
@@ -57,17 +76,22 @@ button {
 .countries li > button {
   padding: 0 20px;
   font-size: 16px;
-  font-family: 'Questrial', sans-serif;
 }
 
 .loading-elements {
   width: 85%;
   height: 80%;
-  margin: 2%;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .loading-elements li {
   display: block;
+}
+
+.loading-elements-list {
+  width: 100%;
 }
 
 .loading-elements-list > li:not(.active), .hide {
@@ -78,45 +102,41 @@ button {
   padding: 0;
   margin: 0;
   width: 20px;
+  height: 20px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.arrow.left {
-  float: left;
-}
-
-.arrow.right {
-  float: right;
-}
-
-.timer {
-  position: relative;
-}
-
 .reset, .play {
-  width: 35px;
-}
-
-.intro {
-  display: flex;
-  align-items: center;
+  width: 28px;
 }
 
 .intro img {
-  padding-right: 15px;
+  float: right;
+  width: 480px;
+  position: relative;
 }
 
-.intro p {
-  height: 400px;
+.intro .text {
   font-size: 18px;
-  font-family: 'Questrial', sans-serif;
-  display: flex;
-  align-items: center;
-  padding: 20px;
   line-height: 30px;
-  border: 10px solid #EFF1F5;
+  max-width: 500px;
+  float: left;
+}
+
+.notes > li {
+  font-size: 16px;
+
+}
+
+.controls {
+  height: 150px;
+}
+
+.controls > * {
+  display: block;
+  margin: 20px;
 }
 
 @keyframes loadinganim {
