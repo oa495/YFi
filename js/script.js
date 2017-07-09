@@ -3,6 +3,7 @@ var indexOfActiveElement = 0;
 var timerOn = false;
 var country;
 var numAnim;
+var loaded = false;
 
 $(document).ready(function() {
 	// What animation should be displayed on the screen
@@ -151,7 +152,7 @@ $(document).ready(function() {
 		// set country
 		let clickedCountry = $(this).text();
 		if (clickedCountry !== country) {
-			showLoadedContent();
+			showUnLoadedContent();
 			country = $(this).text();
 			$('#countriesList > li').removeClass('active-button');
 			$(this).addClass('active-button');
@@ -165,26 +166,28 @@ $(document).ready(function() {
 		}
 		else indexOfActiveElement = loadingElementsList.length-1;
 		loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
-		showLoadedContent();
+		showUnLoadedContent();
 	});
 
 	$('.arrow.right').on('click', function(event) {
-		console.log('arrow right!');
 		loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
     if (indexOfActiveElement !== loadingElementsList.length-1 ) {
 			indexOfActiveElement++;
 		}
 		else indexOfActiveElement = 0;
 		loadingElementsList.eq(indexOfActiveElement).toggleClass('active');
-		showLoadedContent();
+		showUnLoadedContent();
 	});
 
 	$('.reset').on('click', function(event) {
-			showLoadedContent();
+			showUnLoadedContent();
 	});
 
 	$('.play').on('click', function(event) {
-		play(sizeToLoad, cWifiSpeeds, loadingElementsList);
+		if (!loaded) {
+			console.log('in here');
+			play(sizeToLoad, cWifiSpeeds, loadingElementsList);
+		}
 	});
 });
 
@@ -193,32 +196,34 @@ function reset() {
 	// show unloaded content
 	if (timerOn) {
 		timerOn = false;
-		console.log('in here');
 		numAnim.reset();
 	}
 }
 
 function showUnLoadedContent() {
 	reset();
+	let loading = $('.loading');
+	let loaded = $('.loaded');
+	loading.removeClass('hide');
+	loaded.addClass('hide');
+	loaded = true;
+}
+
+function showLoadedContent() {
+	reset();
 	let parent = loadingElementsList.eq(indexOfActiveElement);
 	let loading = parent.children('.loading');
 	let loaded = parent.children('.loaded');
 	loading.addClass('hide');
 	loaded.removeClass('hide');
-}
+	loaded = false;
 
-function showLoadedContent() {
-	reset();
-	let loading = $('.loading');
-	let loaded = $('.loaded');
-	loading.removeClass('hide');
-	loaded.addClass('hide');
 }
 
 function startTimer(s) {
 	timerOn = true;
 	numAnim = new CountUp('timer', 0, s, 5);
-	numAnim.start(showUnLoadedContent);
+	numAnim.start(showLoadedContent);
 }
 
 function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
@@ -228,7 +233,6 @@ function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
 				// Get text in element
 				let text = loadingElementsList.eq(indexOfActiveElement).text();
 				if (text.includes(element)) {
-					console.log('this is the current animation:' + element);
 					// get country download time for that service, i.e get how long it'll take to download a netflix episode
 					let downloadTime = wifiSpeeds[country][element]; // in seconds
 					// set timer on to true

@@ -34,10 +34,6 @@ h2, h3 {
   font-size: 22px;
 }
 
-li {
-  list-style: none;
-}
-
 button {
   outline: none;
   border: none;
@@ -50,8 +46,18 @@ a {
   border-bottom: 3px solid #FBD6E8;
 }
 
-.active-button {
-  background: red;
+a:hover {
+  transition: background-color 0.3s ease;
+  background: #E1EBF9;
+  opacity: 0.8;
+}
+
+.active-button:after { 
+  display: inline-block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: transparent url(../images/circle.svg) no-repeat;
 }
 
 #container {
@@ -69,8 +75,9 @@ a {
 }
 
 .countries li {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #E1EBF9;
   padding: 20 0px;
+  display: flex;
 }
 
 .countries li > button {
@@ -79,23 +86,35 @@ a {
 }
 
 .loading-elements {
-  width: 85%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   margin: 0 20px;
   display: flex;
   flex-direction: row;
 }
 
-.loading-elements li {
+.loading-elements > li {
   display: block;
 }
 
 .loading-elements-list {
   width: 100%;
+  overflow-y: scroll;
+  padding: 0;
 }
 
 .loading-elements-list > li:not(.active), .hide {
   display: none;
+}
+
+.loaded, .loading, .intro {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.loading > img, .loaded > img {
+  width: 100%;
+  height: 80%;
 }
 
 .arrow {
@@ -113,7 +132,7 @@ a {
 }
 
 .intro img {
-  float: right;
+  padding-left: 40px;
   width: 480px;
   position: relative;
 }
@@ -127,16 +146,28 @@ a {
 
 .notes > li {
   font-size: 16px;
-
+  list-style-image: url(../images/circle.svg);
 }
 
 .controls {
-  height: 150px;
+  width: 200px;
+  height: 40px;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100px;
+  right: 20px;
 }
 
-.controls > * {
-  display: block;
-  margin: 20px;
+.controls > li {
+  display: inline;
+  padding: 5px;
+}
+
+.creator {
+  position: absolute;
+  padding-top: 20px;
 }
 
 @keyframes loadinganim {
@@ -148,6 +179,7 @@ a {
   }
 }
 
+/** -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- */
 /** Netflix **/
 /* Pen by Albert Augustin: https://codepen.io/alberta/pen/qZbpgv, @alberta */
 
@@ -158,6 +190,7 @@ a {
   text-align: center;
   display: table;
   width: 100%;
+  height: 80%;
 }
 
 #loading {
@@ -212,14 +245,6 @@ a {
   border-radius: 50%;
 }
 
-
-/** -------------------- */
-/** Jose Manuel Perez, @jmperez **/
-.img-blur {
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: blur(25px);
-}
 
 /** Google loader --> https://codepen.io/jczimm/pen/vEBpoL by @jczimm **/
 
@@ -453,3 +478,4 @@ a {
     transform: rotate(360deg);
   }
 }
+

@@ -26,7 +26,7 @@
 							<ul class="notes">
 								<li> Data about wifi speeds is from: <a href="https://www.akamai.com/us/en/about/our-thinking/state-of-the-internet-report/">Akamai's State of the Internet / Connectivity Report.</a></li>
 								<li>I chose countries based on what suprised me and to get diversity across speeds.</li>
-								<li>To get most data about loading times, I used a combination of Firefox DevTools and the Network Panel on Chrome DevTools. For Gmail I used this article on <a href="https://www.lifewire.com/how-to-check-your-gmail-storage-quota-3572140">Gmail's Storage Quota.</a></li>
+								<li>To get most data about loading times, I used a combination of <a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox DevTools</a> and the Network Panel on <a href="https://developer.chrome.com/devtools">Chrome DevTools.</a> For Gmail I used this article on <a href="https://www.lifewire.com/how-to-check-your-gmail-storage-quota-3572140">Gmail's Storage Quota.</a></li>
 								<li>The wifi speeds and sizes of resources are hard-coded in so you can see them and the rest of the code at <a href="https://github.com/oa495/whyfi">the repo.</a></li>
 								<li>Any other questions / thoughts? Hit me up on <a href="https://twitter.com/YellzHeard">twitter!</a></li>
 							</ul>
@@ -46,34 +46,30 @@
 								</div>
 							</div>
 						</div>
-						<span>This was made by: </span>
+						<span class="creator">Blur effect: <a href="https://codepen.io/alberta/"> Albert Augustin</a> </span>
 					</div>
-					<div class="loaded"><img src=""/></div>
+					<div class="loaded"><img src="images/black-mirror-1.jpg"/></div>
 				</li>
 				<li>
 					<h3> Medium's Blur Effect on Images </h3>
 					<div class="loading">
-						<div class="placeholder" data-large="https://cdn-images-1.medium.com/max/1800/1*sg-uLNm73whmdOgKlrQdZA.jpeg">
-						  <img src="https://cdn-images-1.medium.com/freeze/max/27/1*sg-uLNm73whmdOgKlrQdZA.jpeg?q=20" class="img-small">
-						  <div style="padding-bottom: 66.6%;"></div>
-						</div>
-						<span>A pen by José Manuel Pérez, @jmperez </span>
+						 <img class="img" src="images/medium-image-blur.jpg"/>
+						<span class="creator">Blur effect from: <a href="https://codepen.io/jmperez/"> José Manuel Pérez.</a> Image<a href="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"> here.</a></a></span>
 					</div>
-					<div class="loaded"></div>
+					<div class="loaded"><img src="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"></div>
 				</li>
 				<li>
 					<h3>Giphy Reactions Page</h3>
 					<div class="loading">
-						<div><img src="images/giphy-placeholder.png"></div>
-						<span>This was made by: </span>
+						<img src="images/giphy-placeholder.png">
 					</div>
-					<div class="loaded"><img src=""></div>
+					<div class="loaded"><img src="images/giphy-loaded.png"></div>
 				</li>
 				<li>
 					<h3>Twitter Timeline</h3>
 					<div class="loading">
 						<div><img src="images/twitter.gif"></div>
-						<span>This was made by: </span>
+						<span class="creator">Creator: </span>
 					</div>
 					<div class="loaded"><img src=""></div>
 				</li>
@@ -85,7 +81,7 @@
 								<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
 							</svg>
 						</div>
-						<span>This was made by: </span>
+						<span class="creator">Creator: </span>
 					</div>
 					<div class="loaded"></div>
 				</li>
@@ -94,7 +90,7 @@
 					<div class="loading">
 						<div class="loader-2">
 						</div>
-						<span>This was made by: </span>
+						<span class="creator">Creator: </span>
 					</div>
 					<div class="loaded"></div>
 				</li>
@@ -133,16 +129,16 @@
 							<div class="line width500"></div>
 							<div class="line width470"></div>
 						</div>
-						<span>This was made by: </span>
+						<span class="creator">Creator: </span>
 					</div>
 					<div class="loaded"></div>
 				</li>
 			</ul>
-			<div class="controls">
-				<span id="timer"></span>
-				<button class="reset"><img src="images/reset.svg"/></button>
-				<button class="play"><img src="images/play.svg"/></button>
-			</div>
+			<ul class="controls">
+				<li><span id="timer"></span></li>
+				<li><button class="reset"><img src="images/reset.svg"/></button></li>
+				<li><button class="play"><img src="images/play.svg"/></button></li>
+			</ul>
 			<button class="arrow right"><img src="images/right-arrow.svg" /></button>
 		</div>
 	</div>
