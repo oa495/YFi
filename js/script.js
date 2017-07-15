@@ -138,7 +138,11 @@ $(document).ready(function() {
 		'LinkedIn': 16000000,
 		'Instagram': 4800000,
 		'Giphy': 65600000,
-		'Twitter': 36000000
+		'Twitter': 36000000,
+		'Imgur': 65600000,
+		'Youtube': 65600000,
+		'Facebook': 65600000,
+		'Messenger':65600000
 	};
 
 	addCountriesList(cWifiSpeeds);
