@@ -479,3 +479,14 @@ a:hover {
   }
 }
 
+
+
+ aside {
+  margin: 10px; auto;
+  text-align: center;
+  width: 256px;
+  height: 256px;
+  background: rgba(233, 45, 65, 0.6);
+  position: relative;
+}
+
