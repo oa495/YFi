@@ -3,19 +3,20 @@
 	<title>Y-Fi</title>
 	<link href="https://fonts.googleapis.com/css?family=Dosis|Montserrat:400,600,700|Questrial" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/countUp.js"></script>
 	<script src="js/countUp-jquery.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
-	<h1>Y-Fi</h1>
+	<h1><img class="logo" src="images/logo.svg"></h1>
 	<div id="container">
 		<div class="countries">
 			<h2> Countries</h2>
 		</div>
-		<div class="loading-elements">
-			<button class="arrow left"><img src="images/left-arrow.svg" /></button>
+		<div role="main" class="loading-elements">
+			<button class="arrow left"><img alt="left arrow icon" src="images/left-arrow.svg" /></button>
 			<ul class="loading-elements-list">
 				<li class="active">
 					<div class="intro">
@@ -31,7 +32,7 @@
 								<li>Any other questions / thoughts? Hit me up on <a href="https://twitter.com/YellzHeard">twitter!</a></li>
 							</ul>
 						</div>
-						<img src="images/twitter-convo.png"/>
+						<img alt="Twitter Thread"src="images/twitter-convo.png"/>
 					</div>
 				</li>
 				<li>
@@ -48,31 +49,31 @@
 						</div>
 						<span class="creator">Creator: <a href="https://codepen.io/alberta/"> Albert Augustin</a> </span>
 					</div>
-					<div class="loaded"><img src="images/black-mirror-1.jpg"/></div>
+					<div aria-live="polite" role="region" class="loaded"><img alt="Black Mirror Nosedive"src="images/black-mirror-2.jpeg"/></div>
 				</li>
 				<li>
 					<h3> Medium's Blur Effect on Images </h3>
 					<div class="loading">
-						 <img class="img" src="images/medium-image-blur.jpg"/>
-						<span class="creator">Blur effect from: <a href="https://codepen.io/jmperez/"> José Manuel Pérez.</a> Image<a href="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"> here.</a></a></span>
+						<img class="img" alt="Blurred Image of Black Girl" src="images/medium-image-blur.jpg"/>
+						<span class="creator">Blur effect from: <a href="https://codepen.io/jmperez/"> José Manuel Pérez.</a> Image<a href="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"> here.</a></span>
 					</div>
-					<div class="loaded"><img src="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"></div>
+					<div aria-live="polite" role="region" class="loaded"><img alt="Black Girl being magical" src="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"></div>
 				</li>
 				<li>
 					<h3>Giphy Reactions Page</h3>
 					<div class="loading">
-						<img src="images/giphy-placeholder.png">
+						<img alt="Giphy Reactions Page with images loading"src="images/giphy-placeholder.png">
 					</div>
-					<div class="loaded"><img src="images/giphy-loaded.png"></div>
+					<div aria-live="polite" role="region" class="loaded"><img alt="Giphy Reactions Page" src="images/giphy-loaded.png"></div>
 				</li>
 				<li>
 					<h3>Twitter Timeline</h3>
 					<div class="loading">
-						<div><img src="images/twitter.gif"></div>
+						<div><img alt="Twitter loading gif" src="images/twitter.gif"></div>
 						<span class="creator">Creator: <a href="https://giphy.com/gifs/mashable-3oEjI6SIIHBdRxXI40"> Mashable Gifs</a></span>
 					</div>
-					<div class="loaded">
-						<a data-width="256" class="twitter-timeline" href="https://twitter.com/YellzHeard">Tweets by YellzHeard</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+					<div aria-live="polite" role="region" class="loaded">
+						<div><a data-width="256" class="twitter-timeline" href="https://twitter.com/YellzHeard">Tweets by YellzHeard</a><script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 					</div>
 				</li>
 				<li>
@@ -85,7 +86,7 @@
 						</div>
 						<span class="creator">Creator: <a href="https://codepen.io/jczimm/pen/vEBpoL"> jczimm </a></span>
 					</div>
-					<div class="loaded"><img src="images/gmail.png"></div>
+					<div aria-live="polite" role="region" class="loaded"><img alt="Gmail Account" src="images/gmail.png"></div>
 				</li>
 				<li>
 					<h3>Instagram Load</h3>     
@@ -94,7 +95,7 @@
 						</div>
 						<span class="creator">Creator: <a href="https://codepen.io/feirer/pen/zovgae"> Patrick Feirer </a></span>
 					</div>
-					<div class="loaded"><img src="images/solange.jpg"></div>
+					<div aria-live="polite" role="region" class="loaded"><img alt="Solange in concert" src="images/solange.jpg"></div>
 				</li>
 				<li>
 					<h3>LinkedIn Content Placeholder</h3>
@@ -122,47 +123,39 @@
 						</div>
 						<span class="creator">Creator: <a href="https://codepen.io/fahimshani/"> Fahimshani </a></span>
 					</div>
-					<div class="loaded"><img src="images/linkedin.png"/></div>
+					<div aria-live="polite" role="region" class="loaded"><img alt="LinkedIn Fee" src="images/linkedin.png"/></div>
 				</li>
 				<li>
 					<h3>Messenger</h3>
 					<div class="loading">
-						<div><img src="images/messenger.gif"></div>
+						<div><img alt="Messenger Loading Animation" src="images/messenger.gif"></div>
 						<span class="creator">Creator: <a href="https://twitter.com/freialobo">Freia Lobo</a></span>
 					</div>
-					<div class="loaded">><img src="images/messenger.jpg"></div>
+					<div aria-live="polite" role="region" class="loaded"><img alt="Picture sent in Facebook messenger" src="images/messenger.jpg"></div>
 				</li>
 				<li>
 					<h3>Facebook Timeline</h3>
 					<div class="loading">
-						<div><img src="images/facebook-timeline.gif"></div>
+						<div><img alt="Facebook Timeline loading" src="images/facebook-timeline.gif"></div>
 						<span class="creator">Creator: <a href="https://twitter.com/freialobo">Freia Lobo</a></span>
 					</div>
-					<div class="loaded"><img src="images/facebook-timeline.png"></div>
-				</li>
-				<li>
-					<h3>Youtube</h3>
-					<div class="loading">
-						<div><img src="images/youtube.gif"></div>
-						<span class="creator">Creator: <a href="https://twitter.com/freialobo">Freia Lobo</a></span>
-					</div>
-					<div class="loaded"><iframe width="560" height="315" src="https://www.youtube.com/embed/qR3o6y2j2xk" frameborder="0" allowfullscreen></iframe></div>
+					<div aria-live="polite" role="region" class="loaded"><img alt="Facebook Timeline" src="images/facebook-timeline.png"></div>
 				</li>
 				<li>
 					<h3>Imgur</h3>
 					<div class="loading">
 						<div><img src="images/imgur.gif"></div>
-						<span class="creator">Source: <a href="https://giphy.com/gifs/3og0Ix0WraIOJGUMTK">Giphy/a></span>
+						<span class="creator">Source: <a href="https://giphy.com/gifs/3og0Ix0WraIOJGUMTK">Giphy</a></span>
 					</div>
-					<div class="loaded"><img src="images/imgur.jpg"></div>
+					<div aria-live="polite" role="region" class="loaded"><img alt="Different Colored Dogs" src="images/imgur.jpg"></div>
 				</li>
 			</ul>
 			<ul class="controls">
-				<li><span id="timer"></span></li>
-				<li><button class="reset"><img src="images/reset.svg"/></button></li>
-				<li><button class="play"><img src="images/play.svg"/></button></li>
+				<li><span role="timer" aria-live="polite" id="timer"></span></li>
+				<li><button class="reset"><img alt="reset icon" src="images/reset.svg"/></button></li>
+				<li><button class="play"><img alt="play icon" src="images/play.svg"/></button></li>
 			</ul>
-			<button class="arrow right"><img src="images/right-arrow.svg" /></button>
+			<button class="arrow right"><img alt="right arrow icon"src="images/right-arrow.svg" /></button>
 		</div>
 	</div>
 </body>
