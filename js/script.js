@@ -225,8 +225,6 @@ function showLoadedContent() {
 }
 
 function startTimer(ms) {
-  console.log(ms);
-  console.log(seconds);
   timerOn = true;
   timer = setInterval(function () {
     $('#timer').html(++seconds);
@@ -267,5 +265,4 @@ function calculateDownloadTimes(wifiSpeeds, sizeToLoad) {
       }
     }
   }
-  console.log(wifiSpeeds);
 }
