@@ -2,7 +2,8 @@ var loadingElementsList;
 var indexOfActiveElement = 0;
 var timerOn = false;
 var country;
-var numAnim;
+var timer;
+var seconds = 0;
 var loaded = false;
 
 $(document).ready(function() {
@@ -199,7 +200,7 @@ function reset() {
  // show unloaded content
  if (timerOn) {
   timerOn = false;
-  numAnim.reset();
+  clearInterval(timer);
  }
 }
 
@@ -223,28 +224,28 @@ function showLoadedContent() {
 
 }
 
-function startTimer(s) {
+function startTimer(ms) {
  timerOn = true;
- numAnim = new CountUp('timer', 0, s, 5);
- numAnim.start(showLoadedContent);
+ console.log(ms);
+  timer = setInterval(function () {
+    $('#timer').html(++seconds);
+  }, 1000);
+
+  setTimeout(function () {
+    clearInterval(timer);
+    showLoadedContent();
+  }, ms); 
 }
 
 function play(sizeToLoad, wifiSpeeds, loadingElementsList) {
- if (country) {
-  for (var element in sizeToLoad) {
-   if ((indexOfActiveElement !== 0) && (indexOfActiveElement !== loadingElementsList.length)) {
-    // Get text in element
-    let text = loadingElementsList.eq(indexOfActiveElement).text();
-    if (text.includes(element)) {
-     // get country download time for that service, i.e get how long it'll take to download a netflix episode
-     let downloadTime = wifiSpeeds[country][element]; // in seconds
-     // set timer on to true
-     timerOn = true;
-     startTimer(downloadTime);
+  if (country) {
+    if ((indexOfActiveElement !== 0) && (indexOfActiveElement !== loadingElementsList.length)) {
+      let text = loadingElementsList.eq(indexOfActiveElement).find('h3').text().trim();
+      let element = text.split(' ')[0];
+      let downloadTime = wifiSpeeds[country][element];
+      startTimer(downloadTime);
     }
-   }
   }
- }
 }
 
 function addCountriesList(wifiSpeeds){
@@ -261,7 +262,7 @@ function calculateDownloadTimes(wifiSpeeds, sizeToLoad) {
     let speed = wifiSpeeds[country].averageSpeed;
    for (var element in sizeToLoad) {
      if (sizeToLoad.hasOwnProperty(element)) {
-      wifiSpeeds[country][element] = sizeToLoad[element] / speed;
+      wifiSpeeds[country][element] = (Math.round(sizeToLoad[element] / speed))*1000; // in ms
     }
    }
  }
