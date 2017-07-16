@@ -1,164 +1,164 @@
 <html>
 <head>
-	<title>Y-Fi</title>
-	<link href="https://fonts.googleapis.com/css?family=Dosis|Montserrat:400,600,700|Questrial" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/countUp.js"></script>
-	<script src="js/countUp-jquery.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-	<script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-102590951-1', 'auto'); ga('send', 'pageview');
-	</script>
+    <title>Y-Fi</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Montserrat:400,600,700|Questrial" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/countUp.js"></script>
+    <script src="js/countUp-jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-102590951-1', 'auto'); ga('send', 'pageview');
+    </script>
 </head>
 <body>
-	<h1><img class="logo" src="images/logo.svg"></h1>
-	<div id="container">
-		<div class="countries">
-			<h2> Countries</h2>
-		</div>
-		<div role="main" class="loading-elements">
-			<button class="arrow left"><img alt="left arrow icon" src="images/left-arrow.svg" /></button>
-			<ul class="loading-elements-list">
-				<li class="active">
-					<div class="intro">
-						<h3>What is this? </h3>
-						<div class="text">
-							<p> This website was inspired by this conversation I had on twitter. I was home (Nigeria) for a bit before I started work and was annoyed at how long I had to look at loading animations. I wondered how long people wanted to wait around the world screaming.</p>
-							<h4> Notes / How this works </h4>
-							<ul class="notes">
-								<li> Data about wifi speeds is from: <a href="https://www.akamai.com/us/en/about/our-thinking/state-of-the-internet-report/">Akamai's State of the Internet / Connectivity Report.</a></li>
-								<li>I chose countries based on what suprised me and to get diversity across speeds.</li>
-								<li>To get most data about loading times, I used a combination of <a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox DevTools</a> and the Network Panel on <a href="https://developer.chrome.com/devtools">Chrome DevTools.</a> For Gmail I used this article on <a href="https://www.lifewire.com/how-to-check-your-gmail-storage-quota-3572140">Gmail's Storage Quota.</a></li>
-								<li>The wifi speeds and sizes of resources are hard-coded in so you can see them and the rest of the code at <a href="https://github.com/oa495/whyfi">the repo.</a></li>
-								<li>Any other questions / thoughts? Hit me up on <a href="https://twitter.com/YellzHeard">twitter!</a></li>
-							</ul>
-						</div>
-						<img alt="Twitter Thread"src="images/twitter-convo.png"/>
-					</div>
-				</li>
-				<li>
-					<h3>Netflix</h3>
-					<div class="loading">
-						<div id='wrapper'>
-							<div id='loading'>
-								<div class='bulletouter'>
-									<div class='bulletinner'></div>
-									<div class='mask'></div>
-									<div class='dot'></div>
-								</div>
-							</div>
-						</div>
-						<span class="creator">Creator: <a href="https://codepen.io/alberta/"> Albert Augustin</a> </span>
-					</div>
-					<div aria-live="polite" role="region" class="loaded"><img alt="Black Mirror Nosedive"src="images/black-mirror-2.jpeg"/></div>
-				</li>
-				<li>
-					<h3> Medium's Blur Effect on Images </h3>
-					<div class="loading">
-						<img class="img" alt="Blurred Image of Black Girl" src="images/medium-image-blur.jpg"/>
-						<span class="creator">Blur effect from: <a href="https://codepen.io/jmperez/"> José Manuel Pérez.</a> Image<a href="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"> here.</a></span>
-					</div>
-					<div aria-live="polite" role="region" class="loaded"><img alt="Black Girl being magical" src="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"></div>
-				</li>
-				<li>
-					<h3>Giphy Reactions Page</h3>
-					<div class="loading">
-						<img alt="Giphy Reactions Page with images loading"src="images/giphy-placeholder.png">
-					</div>
-					<div aria-live="polite" role="region" class="loaded"><img alt="Giphy Reactions Page" src="images/giphy-loaded.png"></div>
-				</li>
-				<li>
-					<h3>Twitter Timeline</h3>
-					<div class="loading">
-						<div><img alt="Twitter loading gif" src="images/twitter.gif"></div>
-						<span class="creator">Creator: <a href="https://giphy.com/gifs/mashable-3oEjI6SIIHBdRxXI40"> Mashable Gifs</a></span>
-					</div>
-					<div aria-live="polite" role="region" class="loaded">
-						<div><a data-width="256" class="twitter-timeline" href="https://twitter.com/YellzHeard">Tweets by YellzHeard</a><script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-					</div>
-				</li>
-				<li>
-					<h3>Gmail Loading Animation</h3>
-					<div class="loading">
-						<div class="loader">
-							<svg class="circular" viewBox="25 25 50 50">
-								<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-							</svg>
-						</div>
-						<span class="creator">Creator: <a href="https://codepen.io/jczimm/pen/vEBpoL"> jczimm </a></span>
-					</div>
-					<div aria-live="polite" role="region" class="loaded"><img alt="Gmail Account" src="images/gmail.png"></div>
-				</li>
-				<li>
-					<h3>Instagram Load</h3>     
-					<div class="loading">
-						<div class="loader-2">
-						</div>
-						<span class="creator">Creator: <a href="https://codepen.io/feirer/pen/zovgae"> Patrick Feirer </a></span>
-					</div>
-					<div aria-live="polite" role="region" class="loaded"><img alt="Solange in concert" src="images/solange.jpg"></div>
-				</li>
-				<li>
-					<h3>LinkedIn Content Placeholder</h3>
-					<div class="loading">
-						<div class="module post-feed">
-							<div class="circle"></div>
-							<div class="line-wrapper">
-								<div class="line width110"></div>
-								<div class="line width250"></div>
-							</div>
-							<div class="height20"></div>
-							<div class="line width500"></div>
-							<div class="line width470"></div>
-						</div>
+    <h1><img class="logo" src="images/logo.svg"></h1>
+    <div id="container">
+        <div class="countries">
+            <h2> Countries</h2>
+        </div>
+        <div role="main" class="loading-elements">
+            <button class="arrow left"><img alt="left arrow icon" src="images/left-arrow.svg" /></button>
+            <ul class="loading-elements-list">
+                <li class="active">
+                    <div class="intro">
+                        <h3>What is this? </h3>
+                        <div class="text">
+                            <p> This website was inspired by this conversation I had on twitter. I was home (Nigeria) for a bit before I started work and was annoyed at how long I had to look at loading animations. I wondered how long people wanted to wait around the world screaming.</p>
+                            <h4> Notes / How this works </h4>
+                            <ul class="notes">
+                                <li> Data about wifi speeds is from: <a href="https://www.akamai.com/us/en/about/our-thinking/state-of-the-internet-report/">Akamai's State of the Internet / Connectivity Report.</a></li>
+                                <li>I chose countries based on what suprised me and to get diversity across speeds.</li>
+                                <li>To get most data about loading times, I used a combination of <a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox DevTools</a> and the Network Panel on <a href="https://developer.chrome.com/devtools">Chrome DevTools.</a> For Gmail I used this article on <a href="https://www.lifewire.com/how-to-check-your-gmail-storage-quota-3572140">Gmail's Storage Quota.</a></li>
+                                <li>The wifi speeds and sizes of resources are hard-coded in so you can see them and the rest of the code at <a href="https://github.com/oa495/whyfi">the repo.</a></li>
+                                <li>Any other questions / thoughts? Hit me up on <a href="https://twitter.com/YellzHeard">twitter!</a></li>
+                            </ul>
+                        </div>
+                        <img alt="Twitter Thread"src="images/twitter-convo.png"/>
+                    </div>
+                </li>
+                <li>
+                    <h3>Netflix</h3>
+                    <div class="loading">
+                        <div id='wrapper'>
+                            <div id='loading'>
+                                <div class='bulletouter'>
+                                    <div class='bulletinner'></div>
+                                    <div class='mask'></div>
+                                    <div class='dot'></div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="creator">Creator: <a href="https://codepen.io/alberta/"> Albert Augustin</a> </span>
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded"><img alt="Black Mirror Nosedive"src="images/black-mirror-2.jpeg"/></div>
+                </li>
+                <li>
+                    <h3> Medium's Blur Effect on Images </h3>
+                    <div class="loading">
+                        <img class="img" alt="Blurred Image of Black Girl" src="images/medium-image-blur.jpg"/>
+                        <span class="creator">Blur effect from: <a href="https://codepen.io/jmperez/"> José Manuel Pérez.</a> Image<a href="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"> here.</a></span>
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded"><img alt="Black Girl being magical" src="http://mediad.publicbroadcasting.net/p/wosu2/files/styles/x_large/public/201612/black_girl_magic_0.jpg"></div>
+                </li>
+                <li>
+                    <h3>Giphy Reactions Page</h3>
+                    <div class="loading">
+                        <img alt="Giphy Reactions Page with images loading"src="images/giphy-placeholder.png">
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded"><img alt="Giphy Reactions Page" src="images/giphy-loaded.png"></div>
+                </li>
+                <li>
+                    <h3>Twitter Timeline</h3>
+                    <div class="loading">
+                        <div><img alt="Twitter loading gif" src="images/twitter.gif"></div>
+                        <span class="creator">Creator: <a href="https://giphy.com/gifs/mashable-3oEjI6SIIHBdRxXI40"> Mashable Gifs</a></span>
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded">
+                        <div><a data-width="256" class="twitter-timeline" href="https://twitter.com/YellzHeard">Tweets by YellzHeard</a><script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>Gmail Loading Animation</h3>
+                    <div class="loading">
+                        <div class="loader">
+                            <svg class="circular" viewBox="25 25 50 50">
+                                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                            </svg>
+                        </div>
+                        <span class="creator">Creator: <a href="https://codepen.io/jczimm/pen/vEBpoL"> jczimm </a></span>
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded"><img alt="Gmail Account" src="images/gmail.png"></div>
+                </li>
+                <li>
+                    <h3>Instagram Load</h3>     
+                    <div class="loading">
+                        <div class="loader-2">
+                        </div>
+                        <span class="creator">Creator: <a href="https://codepen.io/feirer/pen/zovgae"> Patrick Feirer </a></span>
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded"><img alt="Solange in concert" src="images/solange.jpg"></div>
+                </li>
+                <li>
+                    <h3>LinkedIn Content Placeholder</h3>
+                    <div class="loading">
+                        <div class="module post-feed">
+                            <div class="circle"></div>
+                            <div class="line-wrapper">
+                                <div class="line width110"></div>
+                                <div class="line width250"></div>
+                            </div>
+                            <div class="height20"></div>
+                            <div class="line width500"></div>
+                            <div class="line width470"></div>
+                        </div>
 
-						<div class="module post-feed">
-							<div class="circle"></div>
-							<div class="line-wrapper">
-								<div class="line width110"></div>
-								<div class="line width250"></div>
-							</div>
-							<div class="height20"></div>
-							<div class="line width500"></div>
-							<div class="line width470"></div>
-						</div>
-						<span class="creator">Creator: <a href="https://codepen.io/fahimshani/"> Fahimshani </a></span>
-					</div>
-					<div aria-live="polite" role="region" class="loaded"><img alt="LinkedIn Fee" src="images/linkedin.png"/></div>
-				</li>
-				<li>
-					<h3>Messenger</h3>
-					<div class="loading">
-						<div><img alt="Messenger Loading Animation" src="images/messenger.gif"></div>
-						<span class="creator">Creator: <a href="https://twitter.com/freialobo">Freia Lobo</a></span>
-					</div>
-					<div aria-live="polite" role="region" class="loaded"><img alt="Picture sent in Facebook messenger" src="images/messenger.jpg"></div>
-				</li>
-				<li>
-					<h3>Facebook Timeline</h3>
-					<div class="loading">
-						<div><img alt="Facebook Timeline loading" src="images/facebook-timeline.gif"></div>
-						<span class="creator">Creator: <a href="https://twitter.com/freialobo">Freia Lobo</a></span>
-					</div>
-					<div aria-live="polite" role="region" class="loaded"><img alt="Facebook Timeline" src="images/facebook-timeline.png"></div>
-				</li>
-				<li>
-					<h3>Imgur</h3>
-					<div class="loading">
-						<div><img src="images/imgur.gif"></div>
-						<span class="creator">Source: <a href="https://giphy.com/gifs/3og0Ix0WraIOJGUMTK">Giphy</a></span>
-					</div>
-					<div aria-live="polite" role="region" class="loaded"><img alt="Different Colored Dogs" src="images/imgur.jpg"></div>
-				</li>
-			</ul>
-			<ul class="controls">
-				<li><span role="timer" aria-live="polite" id="timer"></span></li>
-				<li><button class="reset"><img alt="reset icon" src="images/reset.svg"/></button></li>
-				<li><button class="play"><img alt="play icon" src="images/play.svg"/></button></li>
-			</ul>
-			<button class="arrow right"><img alt="right arrow icon"src="images/right-arrow.svg" /></button>
-		</div>
-	</div>
+                        <div class="module post-feed">
+                            <div class="circle"></div>
+                            <div class="line-wrapper">
+                                <div class="line width110"></div>
+                                <div class="line width250"></div>
+                            </div>
+                            <div class="height20"></div>
+                            <div class="line width500"></div>
+                            <div class="line width470"></div>
+                        </div>
+                        <span class="creator">Creator: <a href="https://codepen.io/fahimshani/"> Fahimshani </a></span>
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded"><img alt="LinkedIn Fee" src="images/linkedin.png"/></div>
+                </li>
+                <li>
+                    <h3>Messenger</h3>
+                    <div class="loading">
+                        <div><img alt="Messenger Loading Animation" src="images/messenger.gif"></div>
+                        <span class="creator">Creator: <a href="https://twitter.com/freialobo">Freia Lobo</a></span>
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded"><img alt="Picture sent in Facebook messenger" src="images/messenger.jpg"></div>
+                </li>
+                <li>
+                    <h3>Facebook Timeline</h3>
+                    <div class="loading">
+                        <div><img alt="Facebook Timeline loading" src="images/facebook-timeline.gif"></div>
+                        <span class="creator">Creator: <a href="https://twitter.com/freialobo">Freia Lobo</a></span>
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded"><img alt="Facebook Timeline" src="images/facebook-timeline.png"></div>
+                </li>
+                <li>
+                    <h3>Imgur</h3>
+                    <div class="loading">
+                        <div><img src="images/imgur.gif"></div>
+                        <span class="creator">Source: <a href="https://giphy.com/gifs/3og0Ix0WraIOJGUMTK">Giphy</a></span>
+                    </div>
+                    <div aria-live="polite" role="region" class="loaded"><img alt="Different Colored Dogs" src="images/imgur.jpg"></div>
+                </li>
+            </ul>
+            <ul class="controls">
+                <li><span role="timer" aria-live="polite" id="timer"></span></li>
+                <li><button class="reset"><img alt="reset icon" src="images/reset.svg"/></button></li>
+                <li><button class="play"><img alt="play icon" src="images/play.svg"/></button></li>
+            </ul>
+            <button class="arrow right"><img alt="right arrow icon"src="images/right-arrow.svg" /></button>
+        </div>
+    </div>
 </body>
 </html
