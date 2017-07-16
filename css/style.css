@@ -1,9 +1,9 @@
 /** General CSS **/
 /* E1EBF9 and #FBD6E8 */
- /*#CFE9FA  #F4DCE9*/
- /*#bbe5f0 FFDFE2 A0C5FF
- FCC9C9 #bbe5f0 
- #D5E9EF 6DC4DC*/
+/*#CFE9FA  #F4DCE9*/
+/*#bbe5f0 FFDFE2 A0C5FF
+FCC9C9 #bbe5f0 
+#D5E9EF 6DC4DC*/
 
 body {
   font-family: 'Questrial', sans-serif;
@@ -93,6 +93,7 @@ a:hover {
   width: 100%;
   overflow-y: scroll;
   padding: 0;
+  margin: 0;
 }
 
 .loading-elements-list > li:not(.active), .hide {
@@ -143,7 +144,7 @@ a:hover {
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 100px;
+  top: 120px;
   right: 20px;
 }
 
@@ -154,14 +155,29 @@ a:hover {
 
 .creator {
   position: absolute;
-  padding-top: 20px;
-  bottom: 30px;
+  bottom: 45px;
   left: 280;
 }
 
 .logo {
   height: 50px;
 }
+
+.full-width {
+  width: 100%;
+}
+
+.height-80 {
+  height: 80%;
+}
+
+#timer {
+  font-size: 22px;
+}
+
+/** -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- */
+/** Netflix **/
+/* Pen by Albert Augustin: https://codepen.io/alberta/pen/qZbpgv, @alberta */
 
 @keyframes loadinganim {
   0% {
@@ -171,10 +187,6 @@ a:hover {
     transform: rotate(0deg);
   }
 }
-
-/** -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- */
-/** Netflix **/
-/* Pen by Albert Augustin: https://codepen.io/alberta/pen/qZbpgv, @alberta */
 
 #wrapper {
   background: #141414;
@@ -243,7 +255,8 @@ a:hover {
 
 .loader {
   position: relative;
-  width: 375px;
+  width: 100px;
+  margin: 50 50px;
 }
 
 .loader:before {
@@ -254,10 +267,10 @@ a:hover {
 
 .circular {
   -webkit-animation: rotate 2s linear infinite;
-          animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
   height: 100%;
   -webkit-transform-origin: center center;
-          transform-origin: center center;
+  transform-origin: center center;
   width: 100%;
   position: absolute;
   top: 0;
@@ -271,21 +284,21 @@ a:hover {
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
-          animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
   stroke-linecap: round;
 }
 
 @-webkit-keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @-webkit-keyframes dash {
@@ -316,6 +329,7 @@ a:hover {
     stroke-dashoffset: -124px;
   }
 }
+
 @-webkit-keyframes color {
   100%,
   0% {
@@ -332,6 +346,7 @@ a:hover {
     stroke: #ffa700;
   }
 }
+
 @keyframes color {
   100%,
   0% {
@@ -358,58 +373,58 @@ a:hover {
 @keyframes pulse {
   0%{opacity:.5}100%{opacity:1}
 }
+
 .post-feed {
-    margin-bottom: 12px;
-    padding: 16px 16px 42px;
-    border-radius: 4px;
-    width: 530px;
-    margin: 10px auto 20px;
-    background: #E1E9EE;
+  margin-bottom: 12px;
+  padding: 16px 16px 42px;
+  border-radius: 4px;
+  width: 530px;
+  background: #E1E9EE;
 }
 
 .width500 {
-    width: 500px;
+  width: 500px;
 }
 
 .width470 {
-    width: 470px;
+  width: 470px;
 }
 
 .width110 {
-    width: 110px;
+  width: 110px;
 }
 
 .width250 {
-    width: 250px;
+  width: 250px;
 }
 
 .line {
-    height: 10px;
-    margin: 10px 0;
+  height: 10px;
+  margin: 10px 0;
 }
 
 .circle, .line,  .rect {
-    background: #fff;
-    -webkit-animation: pulse .65s infinite alternate;
-    animation: pulse .65s infinite alternate;
+  background: #fff;
+  -webkit-animation: pulse .65s infinite alternate;
+  animation: pulse .65s infinite alternate;
 }
 
 .circle {
-    border-radius: 50%;
-    display: inline-block;
-    vertical-align: middle;
-    width: 56px;
-    height: 56px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  width: 56px;
+  height: 56px;
 }
 
 .line-wrapper {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
 }
 
 .height20 {
-    height: 20px;
+  height: 20px;
 }
 
 /** Instagram Load **/
@@ -428,6 +443,7 @@ a:hover {
   flex: 0 0 auto;
   flex-flow: column nowrap;
 }
+
 .loader-2:after,
 .loader-2:before {
   height: 120px;
@@ -441,6 +457,7 @@ a:hover {
   position: absolute;
   top: 0;
 }
+
 .loader-2:after {
   -webkit-animation: rotate 2s infinite ease;
   animation: rotate 2s infinite ease;
@@ -448,9 +465,11 @@ a:hover {
   -webkit-transform-origin: 50%;
   transform-origin: 50%;
 }
+
 .loader-2:before {
   border-color: #c7c7c7;
 }
+
 @-webkit-keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);
@@ -466,7 +485,7 @@ a:hover {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-  to {
+to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
@@ -474,7 +493,7 @@ a:hover {
 
 
 
- aside {
+aside {
   margin: 10px; auto;
   text-align: center;
   width: 256px;
