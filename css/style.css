@@ -72,6 +72,10 @@ a:hover {
   display: flex;
 }
 
+.countries li:hover {
+  cursor: pointer;
+}
+
 .countries li > button {
   padding: 0 20px;
   font-size: 16px;
