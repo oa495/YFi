@@ -128,8 +128,7 @@ a:hover {
 .intro .text {
   font-size: 18px;
   line-height: 30px;
-  max-width: 500px;
-  float: left;
+  max-width: 600px;
 }
 
 .notes > li {
